@@ -7,6 +7,7 @@ upDownLeftRight = [(-1, 0), (1, 0), (0, -1), (0, 1)]
 n, m = map(int, input().split())
 MAP = [list(map(int, input().split())) for _ in range(m)]
 
+# 1이 있는 곳은 BFS를 통해 탐색해야 함.
 maximum = 1
 queue = deque([])
 for i in range(m):
@@ -14,6 +15,7 @@ for i in range(m):
         if MAP[i][j] == 1:
             queue.append((i, j))
 
+# BFS 진행
 while queue:
     now = queue.popleft()
     for way in upDownLeftRight:
@@ -26,9 +28,11 @@ while queue:
             MAP[nextX][nextY] = MAP[now[0]][now[1]] + 1
             maximum = max(maximum, MAP[nextX][nextY])
 
+# 0이 있으면 print(-1)
 for i in MAP:
     for j in i:
         if j == 0:
             print(-1)
             exit()
 print(maximum - 1)
+
