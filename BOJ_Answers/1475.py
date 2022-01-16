@@ -12,3 +12,4 @@ for num in n:
     else:
         cntOfNeededNums[num] += 1
 print(ceil(max(cntOfNeededNums.values())))
+
