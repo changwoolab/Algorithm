@@ -48,3 +48,4 @@ dist1 = d1[mid[0]-1] + d2[mid[1]-1] + d3[N-1]
 dist2 = d1[mid[1]-1] + d3[mid[0]-1] + d2[N-1]
 
 print(min(dist1, dist2) if min(dist1, dist2) < math.inf else -1)
+
