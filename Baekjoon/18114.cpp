@@ -8,18 +8,6 @@
 
 using namespace std;
 
-bool hasIt(vector<int> w, int remaining, int left, int right) {
-  int mid = (right + left) / 2;
-  while (left < right) {
-    mid = (right + left) / 2;
-    if (w[mid] > remaining) right = mid - 1;
-    else if (w[mid] == remaining) break;
-    else left = mid + 1;
-  }
-
-  return w[mid] == remaining;
-}
-
 int main() {
   int N, C;
   cin >> N >> C;
